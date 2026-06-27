@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BookingStatus from '../components/BookingStatus.astro';
+import { services } from '../data/services';
+import { portfolio } from '../data/portfolio';
+import { business } from '../data/business';
+import { booking } from '../data/booking';
+
+const description =
+  'Ema V Beauty is a private natural-nail studio in Parker, Colorado specializing in structured gel manicures, builder gel overlays, natural nail care, and detailed custom nail art.';
+---
+
+<BaseLayout title="Ema V Beauty | Natural Nail Studio in Parker, Colorado" description={description}>
+  <Header />
+
+  <main>
+    <section class="hero" data-hero-botanical>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 520 520" role="presentation">
+          <path class="vine-line" d="M48 432 C132 350 100 250 192 198 C265 157 334 183 405 84" />
+          <path class="leaf leaf-one" d="M150 286 C113 249 115 214 168 201 C183 235 181 265 150 286Z" />
+          <path class="leaf leaf-two" d="M305 176 C337 133 381 128 405 164 C370 188 335 194 305 176Z" />
+          <circle class="pearl pearl-one" cx="418" cy="92" r="5" />
+          <circle class="pearl pearl-two" cx="116" cy="374" r="4" />
+          <circle class="pearl pearl-three" cx="260" cy="224" r="3" />
+        </svg>
+      </div>
+
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Private natural-nail studio in {business.location}</p>
+        <h1>Natural nail care, structured gel, and hand-painted art in Parker, Colorado</h1>
+        <p class="hero-lede">
+          Ema V Beauty is a calm one-on-one studio for clients who love healthy natural nails,
+          detailed gel work, and soft custom art with a botanical, whimsical touch.
+        </p>
+        <div class="button-row">
+          <a class="button" href="#booking">{booking.primaryCta}</a>
+          <a class="button button-secondary" href="#services">Explore Services</a>
+          <a class="text-link" href="#portfolio">View My Work</a>
+        </div>
+      </div>
+
+      <figure class="hero-image" data-reveal>
+        <img
+          src="/images/botanical-nail-art.webp"
+          alt="Botanical green and blue nail art held near soft flowers"
+          width="1400"
+          height="933"
+          fetchpriority="high"
+        />
+      </figure>
+    </section>
+
+    <section class="intro-section section-pad" id="new-clients">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Thoughtful, natural-nail focused care</p>
+        <h2>A private appointment experience for soft structure and detailed art</h2>
+      </div>
+      <div class="intro-grid">
+        <div class="intro-card" data-reveal>
+          <h3>Specialized services</h3>
+          <p>
+            Ema focuses on natural nail health and growth support, structured gel manicures,
+            builder gel overlays, IBX repair, detailed hand-painted art, and personalized appointments.
+          </p>
+        </div>
+        <div class="intro-card accent" data-reveal>
+          <h3>Clear service fit</h3>
+          <p>
+            Ema V Beauty does not offer acrylic or dip services. This prototype uses placeholders
+            where exact prices, timing, and booking links still need confirmation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="services">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Explore services</p>
+        <h2>Gel-based services over natural nails</h2>
+        <p>
+          These preview cards introduce the main service categories without inventing pricing,
+          appointment timing, or policies.
+        </p>
+      </div>
+      <div class="service-grid">
+        {services.map((service) => (
+          <article class="service-card" data-reveal>
+            <span aria-hidden="true"></span>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <small>{service.meta}</small>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="portfolio-preview section-pad" id="portfolio">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Portfolio preview</p>
+        <h2>Botanical details, natural texture, and custom gel artistry</h2>
+      </div>
+      <div class="portfolio-grid">
+        {portfolio.map((item) => (
+          <article class="portfolio-card" data-reveal>
+            <figure>
+              <img src={item.src} alt={item.alt} width="900" height="1200" loading="lazy" />
+            </figure>
+            <div>
+              <p>{item.category}</p>
+              <h3>{item.title}</h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="why-section section-pad" id="nail-art">
+      <div class="why-copy" data-reveal>
+        <p class="eyebrow">Why Ema V Beauty</p>
+        <h2>Detailed nails in a quieter, more personal setting</h2>
+        <p>
+          The studio is built for clients who value careful prep, natural-nail-focused services,
+          thoughtful structured gel application, and custom art that feels personal without rushing
+          the appointment.
+        </p>
+        <ul class="check-list">
+          <li>Private one-on-one appointment environment</li>
+          <li>Natural nails, structured gel, and builder overlays</li>
+          <li>Detailed custom art with botanical and seasonal inspiration</li>
+          <li>No acrylic or dip services</li>
+        </ul>
+      </div>
+      <figure class="portrait-card" id="about" data-reveal>
+        <img
+          src="/images/ema-outdoor-portrait.webp"
+          alt="Ema outdoors in warm botanical light"
+          width="1100"
+          height="825"
+          loading="lazy"
+        />
+      </figure>
+    </section>
+
+    <section class="booking-section section-pad">
+      <div data-reveal>
+        <p class="eyebrow">Current availability</p>
+        <h2>Join the waitlist for future openings</h2>
+        <p>
+          Qualified potential clients can explore service information, review the new-client process,
+          and join the waitlist when the external link is supplied.
+        </p>
+      </div>
+      <BookingStatus />
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

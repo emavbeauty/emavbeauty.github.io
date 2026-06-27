@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Page Not Found | Ema V Beauty" description="The page could not be found. Return to Ema V Beauty homepage, services, portfolio, or waitlist information.">
+  <Header />
+  <main class="not-found">
+    <p class="eyebrow">Page not found</p>
+    <h1>This page wandered off the path.</h1>
+    <p>Return to the homepage to explore services, portfolio previews, and waitlist information.</p>
+    <div class="button-row">
+      <a class="button" href="/">Home</a>
+      <a class="button button-secondary" href="/#services">Explore Services</a>
+      <a class="text-link" href="/#booking">Join the Waitlist</a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

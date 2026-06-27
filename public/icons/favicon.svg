@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ema V Beauty">
+  <rect width="64" height="64" rx="18" fill="#f8f3ea"/>
+  <path d="M19 43C31 37 25 23 43 18" fill="none" stroke="#5f714d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M27 29c-7-7-4-13 5-14 2 7 1 11-5 14Z" fill="#a8b99a"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="700" fill="#4a204f">EV</text>
+</svg>
