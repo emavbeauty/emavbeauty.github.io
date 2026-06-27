@@ -1,0 +1,33 @@
+---
+import { booking } from '../data/booking';
+
+const navItems = [
+  { href: '#services', label: 'Services' },
+  { href: '#new-clients', label: 'New Clients' },
+  { href: '#nail-art', label: 'Nail Art' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#about', label: 'About' },
+  { href: '#booking', label: 'Book / Waitlist' },
+];
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Ema V Beauty home">
+    <span class="brand-mark" aria-hidden="true">EV</span>
+    <span>Ema V Beauty</span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+
+  <a class="button button-small" href="#booking">{booking.primaryCta}</a>
+
+  <details class="mobile-nav">
+    <summary aria-label="Open navigation menu">Menu</summary>
+    <nav aria-label="Mobile navigation">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="button" href="#booking">{booking.primaryCta}</a>
+    </nav>
+  </details>
+</header>

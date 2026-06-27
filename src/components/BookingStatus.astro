@@ -1,0 +1,13 @@
+---
+import { booking } from '../data/booking';
+---
+
+<aside class="booking-status" id="booking" aria-label="Current booking status">
+  <span>{booking.label}</span>
+  <p>{booking.announcement}</p>
+  <div class="button-row">
+    {booking.showWaitlistButton && <a class="button" href="#booking">{booking.primaryCta}</a>}
+    {booking.showBookingButton && <a class="button button-secondary" href={booking.bookingUrl || '#booking'}>Book an Appointment</a>}
+  </div>
+  <small>{booking.placeholderNote}</small>
+</aside>

@@ -1,0 +1,27 @@
+---
+import { business } from '../data/business';
+import { booking } from '../data/booking';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div>
+    <a class="footer-brand" href="/">Ema V Beauty</a>
+    <p>Private natural-nail studio in {business.location}.</p>
+    <p class="placeholder-note">{booking.placeholderNote}</p>
+  </div>
+  <nav aria-label="Footer navigation">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#new-clients">New Clients</a>
+    <a href="#booking">Join the Waitlist</a>
+    <a href="#privacy">Privacy Policy Placeholder</a>
+  </nav>
+  <div>
+    <p>{business.studioNote}</p>
+    <p>{business.location}</p>
+    <p>Instagram placeholder</p>
+    <p>Facebook placeholder</p>
+  </div>
+  <p class="copyright">&copy; {year} Ema V Beauty. All rights reserved.</p>
+</footer>
